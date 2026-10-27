@@ -1,8 +1,9 @@
 """Look & feel: CSS, KPI cards, shared Plotly styling."""
 import streamlit as st
 
-AMBER, CYAN, VIOLET, GREEN, PINK, RED, BLUE, GREY = "#FFB547", "#4CC9F0", "#A78BFA", "#34D399", "#F472B6", "#FB7185", "#60A5FA", "#8892A6"
-PHASE = {"RKW": RED, "YKW": "#FBBF24", "BKW": BLUE}
+AMBER, CYAN, VIOLET, GREEN, PINK, RED, BLUE, GREY = "#E8920C", "#0891B2", "#7C3AED", "#059669", "#DB2777", "#E11D48", "#2563EB", "#64748B"
+INK = "#0F172A"
+PHASE = {"RKW": RED, "YKW": "#D49A06", "BKW": BLUE}
 COLORWAY = [AMBER, CYAN, VIOLET, GREEN, PINK, BLUE, RED, GREY]
 
 CSS = """
@@ -11,23 +12,23 @@ CSS = """
 html, body, [class*="css"], .stMarkdown { font-family: 'Space Grotesk', sans-serif; }
 .block-container { padding-top: 1.6rem; padding-bottom: 3rem; max-width: 1280px; }
 #MainMenu, footer { visibility: hidden; }
-section[data-testid="stSidebar"] { background: #0E1420; border-right: 1px solid #1B2335; }
+section[data-testid="stSidebar"] { background: #FFFFFF; border-right: 1px solid #E2E6F0; }
 .brand { display:flex; align-items:center; gap:.6rem; margin: .2rem 0 1.2rem 0; }
-.brand .dot { width:34px; height:34px; border-radius:10px; background: linear-gradient(135deg,#FFB547,#FB7185); display:grid; place-items:center; color:#0B0F17; font-weight:700; }
-.brand b { font-size:1.15rem; letter-spacing:.2px; } .brand span { display:block; font-size:.72rem; color:#8892A6; margin-top:-2px; }
-.hero { padding: 1.4rem 1.6rem; border-radius: 18px; border:1px solid #1E2740;
-  background: radial-gradient(900px 260px at 90% -20%, rgba(255,181,71,.16), transparent 60%), radial-gradient(700px 240px at 0% 120%, rgba(76,201,240,.12), transparent 60%), #111827; margin-bottom: 1.1rem; }
-.hero h1 { margin:0; font-size:1.9rem; font-weight:700; letter-spacing:-.4px; }
-.hero p { margin:.35rem 0 0; color:#9AA5BA; font-size:.98rem; max-width: 70ch; }
-.chip { display:inline-block; padding:.18rem .6rem; border-radius:999px; font-size:.74rem; border:1px solid #26304A; color:#B7C0D3; margin-right:.4rem; background:#0F1523; }
-.kpi { background:#111827; border:1px solid #1E2740; border-radius:14px; padding:.9rem 1.05rem; height:100%; }
-.kpi .l { color:#8892A6; font-size:.8rem; }
-.kpi .v { font-family:'JetBrains Mono',monospace; font-size:1.7rem; font-weight:600; margin-top:.15rem; letter-spacing:-.5px; }
-.kpi .s { font-size:.78rem; margin-top:.1rem; color:#8892A6; }
-.kpi.good .v { color:#34D399; } .kpi.warn .v { color:#FFB547; } .kpi.bad .v { color:#FB7185; } .kpi.info .v { color:#4CC9F0; }
-.note { border-left:3px solid #FFB547; background:#141B2B; padding:.7rem 1rem; border-radius:0 10px 10px 0; color:#B7C0D3; font-size:.9rem; margin:.6rem 0 1rem; }
-.stTabs [data-baseweb="tab-list"] { gap: .3rem; border-bottom: 1px solid #1E2740; }
-div[data-testid="stDataFrame"] { border:1px solid #1E2740; border-radius:12px; overflow:hidden; }
+.brand .dot { width:34px; height:34px; border-radius:10px; background: linear-gradient(135deg,#FFB547,#FB7185); display:grid; place-items:center; color:#fff; font-weight:700; }
+.brand b { font-size:1.15rem; letter-spacing:.2px; color:#0F172A; } .brand span { display:block; font-size:.72rem; color:#64748B; margin-top:-2px; }
+.hero { padding: 1.4rem 1.6rem; border-radius: 18px; border:1px solid #E2E6F0;
+  background: radial-gradient(900px 260px at 90% -20%, rgba(255,181,71,.22), transparent 60%), radial-gradient(700px 240px at 0% 120%, rgba(8,145,178,.12), transparent 60%), #FFFFFF; margin-bottom: 1.1rem; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
+.hero h1 { margin:0; font-size:1.9rem; font-weight:700; letter-spacing:-.4px; color:#0F172A; }
+.hero p { margin:.35rem 0 0; color:#475569; font-size:.98rem; max-width: 70ch; }
+.chip { display:inline-block; padding:.18rem .6rem; border-radius:999px; font-size:.74rem; border:1px solid #D9DEEA; color:#475569; margin-right:.4rem; background:#F3F5FA; }
+.kpi { background:#FFFFFF; border:1px solid #E2E6F0; border-radius:14px; padding:.9rem 1.05rem; height:100%; box-shadow: 0 1px 3px rgba(15,23,42,.05); }
+.kpi .l { color:#64748B; font-size:.8rem; }
+.kpi .v { font-family:'JetBrains Mono',monospace; font-size:1.7rem; font-weight:600; margin-top:.15rem; letter-spacing:-.5px; color:#0F172A; }
+.kpi .s { font-size:.78rem; margin-top:.1rem; color:#64748B; }
+.kpi.good .v { color:#059669; } .kpi.warn .v { color:#D97706; } .kpi.bad .v { color:#E11D48; } .kpi.info .v { color:#0891B2; }
+.note { border-left:3px solid #E8920C; background:#FFF8EB; padding:.7rem 1rem; border-radius:0 10px 10px 0; color:#475569; font-size:.9rem; margin:.6rem 0 1rem; }
+.stTabs [data-baseweb="tab-list"] { gap: .3rem; border-bottom: 1px solid #E2E6F0; }
+div[data-testid="stDataFrame"] { border:1px solid #E2E6F0; border-radius:12px; overflow:hidden; }
 </style>
 """
 
@@ -55,9 +56,14 @@ def note(text):
 
 def style(fig, height=420, legend=True):
     fig.update_layout(
-        height=height, template="plotly_dark", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
-        font=dict(family="Space Grotesk, sans-serif", size=13, color="#C9D1E3"), colorway=COLORWAY,
+        height=height, template="plotly_white", paper_bgcolor="rgba(0,0,0,0)", plot_bgcolor="rgba(0,0,0,0)",
+        font=dict(family="Space Grotesk, sans-serif", size=13, color="#334155"), colorway=COLORWAY,
         margin=dict(l=10, r=10, t=40, b=10), hovermode="x unified",
         legend=dict(orientation="h", y=1.1, x=0, bgcolor="rgba(0,0,0,0)"), showlegend=legend,
-        xaxis=dict(gridcolor="#1B2335", zeroline=False), yaxis=dict(gridcolor="#1B2335", zeroline=False))
+        xaxis=dict(gridcolor="#E6EAF2", zeroline=False), yaxis=dict(gridcolor="#E6EAF2", zeroline=False))
+    for t in fig.data:                      # re-map dark-theme leftovers used by the pages
+        ln, mk = getattr(t, "line", None), getattr(t, "marker", None)
+        if ln is not None and getattr(ln, "color", None) in ("#E6EAF2", "#fff"): ln.color = INK
+        if mk is not None and getattr(mk, "color", None) == "#fff": mk.color = INK
+        if getattr(t, "fillcolor", None) == "rgba(255,255,255,.05)": t.fillcolor = "rgba(15,23,42,.07)"
     return fig
